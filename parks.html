@@ -2,46 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Walks in the Park</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam Travel – Street Food</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Yêu cầu 2: Skip to Main Content -->
   <a class="skip-link" href="#main-content">Skip to Main Content</a>
 
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="neighborhood.html">Neighborhood Walks</a></li>
-        <li><a href="parks.html">Walks in the Park</a></li>
-      </ul>
-    </nav>
-    <img src="images/BaconGallupPark.jpg" width="200" alt="Brown Labradoodle sitting next to a statue.">
-    <h1>Michigan Parks</h1>
+    <img src="images/logo.jpg" alt="Vietnamese lanterns decorating a street in Hoi An">
+    <h1>&#127829; Vietnamese Street Food</h1>
   </header>
 
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cities.html">Cities</a></li>
+      <li><a href="food.html">Street Food</a></li>
+    </ul>
+  </nav>
+
   <main id="main-content">
-    <!-- Yêu cầu 9: dùng class="flex" cho parks -->
+    <div class="intro">
+      <h2>A Food Lover's Paradise</h2>
+      <p>
+        Vietnamese cuisine is celebrated worldwide for its balance of fresh herbs, bold flavors,
+        and beautiful presentation. Whether you are slurping a bowl of
+        <a href="https://en.wikipedia.org/wiki/Pho">Phở</a> at dawn or biting into a crispy
+        Bánh Mì on a busy sidewalk, every meal is an experience.
+      </p>
+    </div>
+
+    <!-- Yêu cầu 7: flex layout, yêu cầu 9: nth-child khác border-radius -->
     <div class="flex">
-      <img src="images/bacon_in_the_woods.png" alt="brown labradoodle sitting near a stream in a wooded setting">
-      <img src="images/bacon_near_the_fort.png" alt="brown labradoodle posing in front of a makeshift fort made of branches">
-      <img src="images/downed_tree.png" alt="a downed tree crossing a stream">
-      <img src="images/fort_in_woods.png" alt="a small fort made of branches">
-      <img src="images/huron_river_cascades.JPG" alt="two people on a kayak approaching some small rapids">
-      <img src="images/lake_view.JPG" alt="a glimpse of a child running along a lake obscured by branches">
-      <img src="images/mist_over_huron_river.JPG" alt="the mist rising over a river in the morning">
-      <img src="images/munising.jpg" alt="small waterfall">
-      <img src="images/reflected_tree.JPG" alt="reflection of a lake and trees">
+      <img src="images/pho.jpg"       alt="A steaming bowl of Vietnamese pho with fresh herbs and lime">
+      <img src="images/banhmi.jpg"    alt="A crispy banh mi sandwich filled with pate and pickled vegetables">
+      <img src="images/banhxeo.jpg"   alt="A sizzling banh xeo crepe being folded on a hot pan">
+      <img src="images/bunbo.jpg"     alt="A bowl of bun bo Hue with thick noodles and lemongrass broth">
+      <img src="images/goimuon.jpg"   alt="Fresh Vietnamese spring rolls on a wooden serving board">
+      <img src="images/cafesua.jpg"   alt="A glass of Vietnamese iced coffee with condensed milk">
+      <img src="images/banhcuon.jpg"  alt="Silky steamed rice rolls filled with mushroom and pork">
     </div>
   </main>
 
   <footer>
-    <p>This page was originally created by Colleen van Lent for the <a
-        href="https://www.coursera.org/specializations/web-design">Web Design for Everybody</a>
-      Specialization. Students are invited to make changes.</p>
+    <p>Created for WD4E Homework 3 &mdash;
+      <a href="https://www.coursera.org/specializations/web-design">Web Design for Everybody</a>
+    </p>
   </footer>
 
 </body>
