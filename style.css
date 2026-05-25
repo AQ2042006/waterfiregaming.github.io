@@ -1,127 +1,272 @@
 /* =============================================
-   Springtime in Michigan – Homework 2
-   style.css
+   Du Lịch Việt Nam – style.css
+   Homework 3
    ============================================= */
 
-/* --- Body --- */
-body {
-  background-color: #fff8e7;
-  color: #5a2d00;
-  font-family: Georgia, serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+/* === CSS Variables === */
+:root {
+  --red:    #c0392b;
+  --gold:   #f0a500;
+  --dark:   #1a1a2e;
+  --cream:  #fdf6ec;
+  --gray:   #f0ebe3;
+  --text:   #2c2c2c;
+  --white:  #ffffff;
+  --shadow: 0 4px 18px rgba(0,0,0,0.15);
 }
 
-/* --- Skip to Main Content (yêu cầu 2) --- */
+/* === Reset === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* === Body === */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--cream);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =============================================
+   YÊU CẦU 3: Skip to Main Content
+   ============================================= */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: #c0392b;
-  color: #ffffff;
-  padding: 8px 16px;
-  font-weight: bold;
-  z-index: 999;
-  transition: top 0.2s;
+  top: -60px;
+  left: 16px;
+  background: var(--red);
+  color: var(--white);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.95em;
+  border-radius: 0 0 8px 8px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.3s ease;
 }
 .skip-link:focus {
   top: 0;
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
-/* --- Header --- */
+/* =============================================
+   HEADER
+   ============================================= */
 header {
-  background-color: #c0392b;
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--dark) 0%, #2d1b4e 100%);
+  color: var(--white);
+  padding: 20px 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(240,165,0,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6em;
+  color: var(--gold);
   text-align: center;
-  padding: 20px;
+  letter-spacing: 2px;
+  padding: 10px 0 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-/* --- H1 --- */
-h1 {
-  color: #ffd700;
-  text-align: center;
+header img {
+  display: block;
+  margin: 0 auto 16px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  /* YÊU CẦU 5: box model */
+  border: 4px solid var(--gold);
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: var(--shadow);
 }
 
-/* --- Yêu cầu 3: Comment out li cũ --- */
-/*
-li {
-  display: inline-block;
-  width: auto;
-}
-*/
-
-/* --- Yêu cầu 4: Nav dùng inline-block, width 80% --- */
+/* =============================================
+   YÊU CẦU 4 & 7: NAV – flex, 3+ CSS props
+   ============================================= */
 nav {
-  background-color: #e67e22;
-  display: inline-block;
-  width: 80%;
+  background-color: var(--red);
+  padding: 0 40px;
 }
 
 nav ul {
+  /* YÊU CẦU 7: flex on nav */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+nav li {
+  /* không dùng inline-block nữa, flex đã xử lý */
 }
 
 nav a {
-  display: inline-block;
-  color: #ffffff;
+  display: block;
+  color: var(--white);
   text-decoration: none;
-  padding: 10px 18px;
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 0.95em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
+/* YÊU CẦU 8: hover pseudo-class với transition */
 nav a:hover {
-  background-color: #c0392b;
+  background-color: var(--gold);
+  color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* --- Yêu cầu 5: Chỉ ảnh trong nav --- */
-nav img {
-  width: 10%;
+nav a:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
-/* --- Main --- */
+/* =============================================
+   MAIN
+   ============================================= */
 main {
-  background-color: #fff3cd;
-  font-size: 1.05em;
-  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 32px;
 }
 
-p {
-  line-height: 1.8;
+/* =============================================
+   YÊU CẦU 5: ALL IMAGES – border, padding, border-radius
+   ============================================= */
+main img {
+  border: 3px solid var(--gold);
+  padding: 5px;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Yêu cầu 6: Grid 2 cột ~40% --- */
+/* YÊU CẦU 8: hover trên ảnh */
+main img:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 10px 32px rgba(192,57,43,0.25);
+  border-color: var(--red);
+}
+
+/* =============================================
+   YÊU CẦU 6: GRID – 2 cột
+   ============================================= */
 .grid {
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
   justify-content: center;
-  align-items: center;
-  row-gap: 16px;
-  gap: 16px;
+  align-items: start;
+  margin: 32px 0;
 }
 
-/* --- Yêu cầu 7: Chỉ ảnh trong .grid --- */
 .grid img {
   width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 
-/* --- Yêu cầu 9: Flex class --- */
+/* =============================================
+   YÊU CẦU 9: nth-child – ảnh chẵn có border-radius khác
+   ============================================= */
+.grid img:nth-child(even) {
+  border-radius: 50% 12px 50% 12px;
+  border-color: var(--red);
+}
+
+.flex img:nth-child(even) {
+  border-radius: 50%;
+  border-color: var(--red);
+}
+
+/* =============================================
+   YÊU CẦU 7: FLEX – trang parks/ảnh nhiều
+   ============================================= */
 .flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 10px;
+  gap: 18px;
+  margin: 32px 0;
 }
 
-/* --- Footer --- */
+.flex img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* === Intro text === */
+.intro {
+  background: var(--white);
+  border-left: 5px solid var(--gold);
+  padding: 20px 28px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--red);
+  font-size: 1.6em;
+  margin-bottom: 8px;
+}
+
+.intro p {
+  color: var(--text);
+  font-size: 1.05em;
+}
+
+.intro a {
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
 footer {
-  background-color: #c0392b;
-  color: #ffd700;
+  background: var(--dark);
+  color: #aaa;
   text-align: center;
-  padding: 14px;
+  padding: 18px 32px;
+  font-size: 0.88em;
+  margin-top: 48px;
 }
 
 footer a {
-  color: #ffd700;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
