@@ -1,124 +1,127 @@
+/* =============================================
+   Springtime in Michigan – Homework 2
+   style.css
+   ============================================= */
 
+/* --- Body --- */
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 150%;
-  background-color: #f4f9f0;
-  color: #2c3e2d;
+  background-color: #fff8e7;
+  color: #5a2d00;
+  font-family: Georgia, serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
+/* --- Skip to Main Content (yêu cầu 2) --- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #c0392b;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-weight: bold;
+  z-index: 999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 /* --- Header --- */
 header {
-  background-color: #2d6a4f;
+  background-color: #c0392b;
   color: #ffffff;
   text-align: center;
-  padding: 24px 16px 16px;
+  padding: 20px;
 }
 
 /* --- H1 --- */
 h1 {
-  font-family: "Palatino Linotype", Palatino, serif;
-  color: #d4edda;
+  color: #ffd700;
   text-align: center;
-  font-size: 2.2em;
-  margin: 12px 0 0;
 }
 
-/* --- Nav --- */
+/* --- Yêu cầu 3: Comment out li cũ --- */
+/*
+li {
+  display: inline-block;
+  width: auto;
+}
+*/
+
+/* --- Yêu cầu 4: Nav dùng inline-block, width 80% --- */
 nav {
-  background-color: #52b788;
+  background-color: #e67e22;
+  display: inline-block;
+  width: 80%;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
-}
-
-/* --- li: display inline-block + width --- */
-li {
-  display: inline-block;
-  width: auto;
 }
 
 nav a {
   display: inline-block;
   color: #ffffff;
   text-decoration: none;
-  padding: 10px 20px;
-  font-size: 0.95em;
-  font-family: Georgia, serif;
-  transition: background-color 0.2s ease;
+  padding: 10px 18px;
 }
 
-nav a:hover,
-nav a:focus {
-  background-color: #2d6a4f;
-  outline: 2px solid #d4edda;
-  outline-offset: -2px;
+nav a:hover {
+  background-color: #c0392b;
+}
+
+/* --- Yêu cầu 5: Chỉ ảnh trong nav --- */
+nav img {
+  width: 10%;
 }
 
 /* --- Main --- */
 main {
-  background-color: #ffffff;
+  background-color: #fff3cd;
   font-size: 1.05em;
-  padding: 32px 48px;
-  max-width: 900px;
-  margin: 24px auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(45, 106, 79, 0.1);
+  padding: 30px 40px;
 }
 
-/* --- p: line-height --- */
 p {
   line-height: 1.8;
 }
 
-/* --- Links inside main --- */
-main a {
-  color: #2d6a4f;
-  text-decoration: underline;
+/* --- Yêu cầu 6: Grid 2 cột ~40% --- */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  gap: 16px;
 }
 
-main a:hover {
-  color: #52b788;
+/* --- Yêu cầu 7: Chỉ ảnh trong .grid --- */
+.grid img {
+  width: 100%;
 }
 
-/* --- Images inside main (gallery) --- */
-main img {
-  border-radius: 6px;
-  margin: 6px;
-  border: 3px solid #d4edda;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-main img:hover {
-  transform: scale(1.05);
-  border-color: #52b788;
-}
-
-/* --- Header image (Bacon) --- */
-header img {
-  border-radius: 50%;
-  border: 4px solid #d4edda;
-  margin-bottom: 8px;
+/* --- Yêu cầu 9: Flex class --- */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 /* --- Footer --- */
 footer {
-  background-color: #2d6a4f;
-  color: #d4edda;
+  background-color: #c0392b;
+  color: #ffd700;
   text-align: center;
-  padding: 16px 32px;
-  font-size: 0.88em;
+  padding: 14px;
 }
 
 footer a {
-  color: #b7e4c7;
-}
-
-footer a:hover {
-  color: #ffffff;
+  color: #ffd700;
 }
